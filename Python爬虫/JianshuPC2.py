@@ -4,8 +4,8 @@ url=requests.get('http://www.jianshu.com/top/daily?note_ids%5B%5D=6971775&note_i
 print(url)
 #print(url.content)
 soup=BeautifulSoup(url.content)#content是关键
-i=soup.select('.title a')[10].get('href')
-print(i)
-#article_list = [i.get_text() for i in soup.select( '.title')]
-#for al in  article_list:
- #   print(al)
+#i=soup.select('.title a')[10].get('href')
+#print(i)
+article_list = [i.get_text() for i in soup.select( '.wrap-img')]
+for al in  article_list:
+    print(al)
