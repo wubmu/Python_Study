@@ -5,10 +5,10 @@ baseUrl='http://jianshu.com'
 page=requests.get(baseUrl).content
 #用beautifusoup解析URL
 soup=BeautifulSoup(page)
-#print(soup.find_all("a",href_=''))
+print(soup.find_all("a",href_=''))
 a=soup.select(".title")
 
-print(a[10].a['href'])
+# print(a[10].a['href'])
 
 add_url = soup.select(".ladda-button")[-1].get("data-url")
 article_list = [i.get_text() for i in soup.select( '.title')]
